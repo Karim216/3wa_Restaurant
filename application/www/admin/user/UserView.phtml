@@ -1,0 +1,56 @@
+	<h2><i class="fa fa-user"></i> Création d'un administrateur</h2>
+
+<form class="generic-form" action="<?= $requestUrl ?>/admin/user" method="POST">
+
+	<side class="error-message hidden">
+		<h3><i class="fa fa-warning"></i> Il y a <span id="js-total-error-count">1</span> erreur(s) dans le formulaire !</h3>
+		<p><?= $errorMessage ?></p>
+	</aside>
+
+	<fieldset>
+		<legend><i class="fa fa-lock"></i> Informations d'authentification</legend>
+		<ul>
+	        <li>
+	            <label for="email">E-mail :</label>
+	            <input id="email" type="text" name="email" data-required data-name="E-mail" value="<?= $email ?>">
+	        </li>
+	        <li>
+	            <label for="password">Mot de passe :</label>
+	            <input id="password" type="password" name="password" data-required data-name="Mot de passe" data-length="8">
+	        </li>
+		</ul>
+	</fieldset>
+
+	<ul>
+		<li>
+			<input class="button button-primary" type="submit" value="Créer le compte">
+			<a class="button button-cancel small" href="<?= $requestUrl ?>">Annuler</a>
+		</li>
+	</ul>
+</form> 
+<form class="generic-form" action="<?= $requestUrl ?>/admin/user" method="POST">
+	<table class="generic-table meal-list">
+		<select name='Email'>
+			<?php foreach ($users as $user): ?>
+				<option value="<?= $user['Email']?>"><?= $user['Email'] ?></option>
+			<?php endforeach ?>
+		</select>
+		<thead>
+			<tr>
+				<th>Prénom</th>
+				<th>Nom</th>
+				<th>mail</th>
+				<th>Select</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td id="firstName"></td >
+				<td id='lastName'></td>
+				<td id='Email'></td>
+				<td id='Admin'></td>
+			</tr>
+		</tbody>
+	</table>
+
+</form>
